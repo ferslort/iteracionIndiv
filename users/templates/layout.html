@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css"  href="{% static '/css/styles.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="containerLogo">
+       <img src="{% static 'images/logo.png' %}" />
+      </div>
+      <div class="containerLogo__config">
+        <nav>
+          <a href="/">Inicio</a>
+          <a href="/user">Usuarios</a>
+        </nav>
+        <div class="containerLogo__logout">
+          <button>Cerra Sesión</button>
+        </div>
+      </div>
+    </header>
+    <main class="containerMain">
+      {% block content%} {% endblock %}
+    </main>
+    <footer>
+      <div class="containerLogo__footer" >
+        <img src="{% static 'images/logo.png' %}" />
+      </div>
+      <div>
+        <p>Desarrollado por: Fernando Padilla</p>
+      </div>
+      </div>
+    </footer>
+  </body>
+</html>
