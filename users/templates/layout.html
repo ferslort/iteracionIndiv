@@ -16,8 +16,9 @@
       </div>
       <div class="containerLogo__config">
         <nav>
-          <a href="/">Inicio</a>
+          <a href="{% url 'index'%}">Inicio</a>
           <a href="/user">Usuarios</a>
+          <a href="{% url 'register'%}">Registro</a>
         </nav>
         <div class="containerLogo__logout">
           <button>Cerra Sesión</button>
