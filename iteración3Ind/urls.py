@@ -21,5 +21,6 @@ from users import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', views.user_page),
-    path('', views.index_page),
+    path('', views.index_page, name="index"),
+    path('register/', views.register_page, name='register'),
 ]
