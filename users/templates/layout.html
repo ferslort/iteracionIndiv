@@ -16,13 +16,16 @@
       </div>
       <div class="containerLogo__config">
         <nav>
-          <a href="{% url 'index'%}">Inicio</a>
-          <a href="/user">Usuarios</a>
-          <a href="{% url 'register'%}">Registro</a>
+          {% if not request.user.is_authenticated %}
+            <a href="{% url 'login'%}">Ingresar</a>
+            <a href="{% url 'register'%}">Registro</a>
+          {% endif %}
+
         </nav>
-        <div class="containerLogo__logout">
-          <button>Cerra Sesión</button>
-        </div>
+        {% if request.user.is_authenticated %}
+          <a href="{% url 'index'%}">Inicio</a>
+          <a href="{% url 'logout'%}">Cerrar Sesión</a>
+        {% endif %}
       </div>
     </header>
     <main class="containerMain">
