@@ -1,6 +1,26 @@
-{% extends 'layout.html' %} {% block content %}
-
-<h1>Tus Proyectos</h1>
-
-
+{% extends 'layout.html' %}
+{% block content %}
+{% if request.user.is_authenticated %}
+  <h1>Tus Proyectos</h1>
+  <div>
+    <p>Bienvenido, {{request.user}}</p>
+    {% if messages %} {% for message in messages %}
+    <div class="alert-error">
+      <p>{{ message }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+{% else %}
+  <h1>Iniciar Sesion</h1>
+  <div>
+    <p>Por favor, inicia sesion para ver tus proyectos</p>
+    {% if messages %} {% for message in messages %}
+    <div class="alert-error">
+      <p>{{ message }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+{% endif %}
 {% endblock %}
