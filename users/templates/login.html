@@ -1,0 +1,24 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="loginForm">
+  <h2>Iniciar Sesión</h2>
+  <form class="loginForm__form" method="POST" >
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert-error">
+          <p >{{ message }}</p>
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% csrf_token %}
+    <fieldset>
+      {{form}}
+    <fieldset>
+      <button type="submit" >Ingresar</button>
+    </fieldset>
+  </form>
+  <div class="loginForm__info">
+    <span>Aun no tienes cuenta? crea una <a href="/register" >Aqui</a></span>
+  </div>
+</div>
+
+{% endblock %}
