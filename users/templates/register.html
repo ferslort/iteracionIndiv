@@ -3,23 +3,16 @@
 <div class="loginForm">
   <h2>Registrate</h2>
   {{form.errors}}
-  {% if messages %}
-  {% for message in messages %}
-  <div class="alert-error">
-    <p >{{ message }}</p>
-  </div>
-  {% endfor %}
-{% endif %}
-  <form class="loginForm__form" method="POST" >
-    {% csrf_token %}
-    {% for field in form %}
-      {{field.label}}
-      {{field}}
+  <form class="loginForm__form" method="POST" action="">
+    {% csrf_token %} {% for field in form %} {{field.label}} {{field}}
     {%endfor%}
     <fieldset>
       <button>Ingresar</button>
     </fieldset>
   </form>
+  <div class="loginForm__info">
+    <span>Ya tienes una cuenta? Ingresa <a href="/">Aqui</a></span>
+  </div>
 </div>
 
 {% endblock %}
