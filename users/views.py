@@ -46,6 +46,7 @@ def page_login(request):
         print(user)
         if user is not None:
             login(request, user)
+            messages.success(request, 'Has iniciado sesión correctamente.')
             return redirect('index')
         else:
             messages.warning(request, 'Usuario o contraseña incorrectos')
