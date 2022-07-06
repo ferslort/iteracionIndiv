@@ -2,23 +2,21 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from users.forms import FormLogin, FomRegister
 from django.contrib.auth import authenticate, login, logout
+from users.models import User
 
 # Create your views here.
 
-from .models import Cliente
-from .forms import RegisterForm
-
 
 def user_page(request):
-    users = Cliente.objects.all()
+    users = User.objects.all()
     return render(request, 'users.html', {
-          'users': users
+        'users': users
     })
 
 
 def index_page(request):
 
-    users = Cliente.objects.all()
+    users = User.objects.all()
 
     return render(request, 'index.html', {
         'users': users

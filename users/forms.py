@@ -1,15 +1,15 @@
 from django import forms
-
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from users.models import User
 
 
 class FomRegister (UserCreationForm):
     class Meta:
         model = User
-        fields = ['first_name', 'email']
+        fields = ['first_name', 'email', 'username']
 
         USERNAME_FIELD = 'email'
+
 
 class FormLogin (forms.Form):
 
