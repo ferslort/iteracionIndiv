@@ -10,7 +10,10 @@ from .forms import RegisterForm
 
 
 def user_page(request):
-    return render(request, 'users.html')
+    users = Cliente.objects.all()
+    return render(request, 'users.html', {
+          'users': users
+    })
 
 
 def index_page(request):
