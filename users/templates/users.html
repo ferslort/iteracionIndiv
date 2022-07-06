@@ -1,5 +1,10 @@
 {% extends 'layout.html' %} {% block content %}
 
-<h1>Usuarios </h1>
+<h1>Usuarios</h1>
 
-{% endblock %}
+<h3>Listado de usuarios registrados</h3>
+{% for user in users %}
+
+<li>{{ user.name }}</li>
+
+{% endfor %} {% endblock %}
