@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from users import views
+from post import views as post_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,8 @@ urlpatterns = [
     path('register/', views.register_page, name='register'),
     path('logout/', views.logout_user, name='logout'),
     path('login/', views.page_login, name='login'),
+    path('post/', post_views.post, name='post'),
+    path('post/create/', post_views.create_post, name='create_post'),
+    path('post/delete/<id>', post_views.delete_post, name='delete_post'),
+    path('post/edit/<id>', post_views.edit_post, name='edit_post'),
 ]

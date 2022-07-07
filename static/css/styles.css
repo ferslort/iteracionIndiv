@@ -217,3 +217,70 @@ footer p {
   color: white;
   padding: 0.5rem 1rem;
 }
+
+/* //////// POST //////////// */
+
+.container-post {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.container-post__menu {
+  flex: 1;
+}
+
+.container-post__menu a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #ff6161;
+  border-radius: 1rem;
+  margin: 1rem 2rem;
+  display: block;
+  text-align: center;
+  width: 70%;
+}
+
+.container-post__result {
+  flex: 4;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.container-post__result-item {
+  background-color: white;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  flex: 1 0 1;
+}
+
+.container-post__result-item:hover {
+  cursor: pointer;
+}
+
+.container-post__result-item p {
+  margin: 1rem 0;
+}
+
+.form_post {
+  max-width: 60%;
+  margin: 4rem auto 0 auto;
+}
+
+.form_post textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+  padding: 2rem;
+}
