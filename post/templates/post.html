@@ -1,0 +1,42 @@
+{% extends 'layout.html' %} {% block content %}
+
+<h2>Post</h2>
+
+<div class="container-post">
+  <div class="container-post__menu">
+    <a href="{% url 'create_post'%}">Nuevo Post</a>
+  </div>
+  <div class="container-post__result">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Email</th>
+          <th scope="col">Asunto</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in posts %}
+        <tr>
+          <th scope="row">{{post.id}}</th>
+          <td>{{post.nombre}}</td>
+          <td>{{post.email}}</td>
+          <td>{{post.asunto}}</td>
+          <td>
+            <div>
+              <a href="/post/edit/{{post.id}}" class="btn btn-info">Editar</a>
+              <a href="/post/delete/{{post.id}}" class="btn btn-danger"
+                >Eliminar</a
+              >
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
